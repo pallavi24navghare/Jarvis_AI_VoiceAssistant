@@ -6,7 +6,7 @@ import webbrowser
 
 import pyttsx3
 import speech_recognition as sr
-import wikipedia  # pip install wikipedia
+import wikipedia  
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -37,7 +37,7 @@ def wishMe():
 
 
 def takeCommand():
-    # It takes microphone input from the user and returns string output
+   
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -61,7 +61,7 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('pallavinavghare228@gmail.com', '9022348878')
+    server.login('pallavinavghare228@gmail.com', 'mypassword')
     server.sendmail('pallavinavghare228@gmail.com', to, content)
     server.close()
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         # if 1:
         query = takeCommand().lower()
 
-        # Logic for executing tasks based on query
+       
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
